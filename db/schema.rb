@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_07_075902) do
+ActiveRecord::Schema.define(version: 2019_12_08_011337) do
+
+  create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email"
-    t.text "desctioption"
+    t.text "description"
     t.string "currency"
     t.integer "customer_id"
     t.string "customer_name"
@@ -23,7 +30,7 @@ ActiveRecord::Schema.define(version: 2019_12_07_075902) do
     t.integer "uuid"
     t.integer "charge_id"
     t.integer "stripe_commission"
-    t.integer "price_after_subtract_commission"
+    t.integer "amount_after_subtract_commission"
     t.string "receipt_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_12_07_075902) do
     t.bigint "payment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "menu_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
