@@ -62,6 +62,7 @@ header {
   background-color: #2C1E0C;
   opacity: 0.85;
   color: white;
+  z-index: 10;
   .header-nav {
     height: 100px;
     display: flex;
@@ -87,6 +88,7 @@ header {
 .mainvisual {
   position: relative;
   height: 600px;
+  padding-top: 100px;
   h2 {
     background-color: #fff;
     position: absolute;
