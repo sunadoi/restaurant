@@ -28,18 +28,28 @@ a:hover {
   .contents {
     width: 80%;
     margin: 0 auto;
-    h2 {
-      text-align: center;
-      border-bottom: solid 1px;
-      padding-bottom: 30px;
-      margin-top: 4em;
+    .tabs {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-around;
+      button {
+        border: none;
+        border-bottom: solid 1px;
+        background: transparent;
+        outline: none;
+        width: 30%;
+        display: inline;
+        font-size: 30px;
+      }
+      .tab-button {
+        color: black;
+        opacity: 0.2;
+      }
+      .active {
+        color: brown;
+        opacity: 1.0;
+      }
     }
-    // .tab-content {
-    //   display: none;
-    // }
-    // .show {
-    //   display: block;
-    // }
 
     .food-contents {
       display: flex;
