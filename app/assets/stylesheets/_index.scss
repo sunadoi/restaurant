@@ -58,6 +58,10 @@ section {
 
 header {
   width: 100%;
+  position: fixed;
+  background-color: #2C1E0C;
+  opacity: 0.85;
+  color: white;
   .header-nav {
     height: 100px;
     display: flex;
@@ -72,6 +76,9 @@ header {
       line-height: 100px;
       .header-content {
         margin-right: 50px;
+        a {
+          color: white;
+        }
       }
     }
   }
