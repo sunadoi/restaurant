@@ -1,0 +1,70 @@
+h2,h3,h4,h5 {
+  margin: 0;
+  padding: 0;
+}
+
+ul,li,dl,dt,dd {
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+
+p {
+  margin: 1em 0 0 0;
+}
+
+a { 
+  text-decoration: none;
+  color: #000;
+}
+a:hover { 
+  transition: .3s;
+  opacity: 0.6;
+}
+
+.contents-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  h2 {
+    text-align: center;
+    border-bottom: solid 1px;
+    padding-bottom: 30px;
+    margin-top: 4em;
+  }
+  .tab-content {
+    // display: none;
+  }
+
+  .food-contents {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .drink-contents {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .left-contents {
+    width: 47%;
+  }
+  .right-contents {
+    width: 47%;
+  }
+
+  .junre {
+    margin-top: 3em;
+  }
+
+  h5 {
+    border-bottom: solid 1px;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .menu li {
+    display: flex;
+    justify-content: space-between;
+  }
+}
