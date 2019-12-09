@@ -23,48 +23,70 @@ a:hover {
 }
 
 .contents-wrapper {
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 100px;
-  h2 {
-    text-align: center;
-    border-bottom: solid 1px;
-    padding-bottom: 30px;
-    margin-top: 4em;
-  }
-  .tab-content {
-    // display: none;
-  }
+  padding: 100px 0;
+  background-image: url(/images/wallpaper.jpg);
+  .contents {
+    width: 80%;
+    margin: 0 auto;
+    h2 {
+      text-align: center;
+      border-bottom: solid 1px;
+      padding-bottom: 30px;
+      margin-top: 4em;
+    }
+    // .tab-content {
+    //   display: none;
+    // }
+    // .show {
+    //   display: block;
+    // }
 
-  .food-contents {
-    display: flex;
-    justify-content: space-between;
-  }
+    .food-contents {
+      display: flex;
+      justify-content: space-between;
+    }
 
-  .drink-contents {
-    display: flex;
-    justify-content: space-between;
-  }
+    .drink-contents {
+      display: flex;
+      justify-content: space-between;
+    }
 
-  .left-contents {
-    width: 47%;
-  }
-  .right-contents {
-    width: 47%;
-  }
+    .left-contents {
+      width: 47%;
+    }
+    .right-contents {
+      width: 47%;
+    }
 
-  .junre {
-    margin-top: 3em;
-  }
+    .junre {
+      margin-top: 3em;
+    }
 
-  h5 {
-    border-bottom: solid 1px;
-    text-align: center;
-    padding: 20px 0;
-  }
+    h5 {
+      border-bottom: solid 1px;
+      text-align: center;
+      padding: 20px 0;
+    }
 
-  .menu li {
-    display: flex;
-    justify-content: space-between;
+    .menu li {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .course-contents {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .course {
+        width: 30%;
+        .menu-name {
+          margin-left: 3em;
+        }
+        li {
+          border-bottom: none;
+        }
+      }
+    }
   }
 }
