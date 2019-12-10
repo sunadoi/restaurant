@@ -5,7 +5,7 @@
   <section class="menus">
     <div class="content-wrapper">
       <div class="bg2"></div>
-    　<h2>こだわり</h2>
+    　<h1>こだわり</h1>
       <div class="contents">
         <div class="content">
           <img src="images/pizza.jpg">
@@ -25,11 +25,15 @@
       </div>
     </div>
   </section>
-  <section class="recruit">
+  <section class="access" id="access">
     <div class="content-wrapper">
+      <h1>アクセス</h1>
       <div class="content">
-        <img src="images/IMG_5385.jpg">
-        <h2><a href="#">採用情報</a></h2>
+        <ul>
+          <li><p class="property">住所</p><p>東京都渋谷区 ハチ公前広場</p></li>
+          <li><p class="property">アクセス</p><p>JR各線「渋谷駅」より徒歩1分</p></li>
+        </ul>
+        <%= render partial: "map.html.erb" %>
       </div>
     </div>
   </section>
@@ -39,9 +43,8 @@
     <h2>お問い合わせ ☎︎01-2345-6789</h2>
     <ul class="footer-contents">
       <li><p class="property">店名</p><p>Buono</p></li>
-      <li><p class="property">住所</p><p>東京都xxxxxxx</p></li>
-      <li><p class="property">アクセス</p><p>JR各線「渋谷駅」xxxxxより徒歩xx分</p></li>
       <li><p class="property">営業時間</p><p>17:30 ~ 23:00 (L.O.22:00)</p></li>
+      <li><p class="property">定休日</p><p>年末年始</p></li>
     </ul>
   </div>
   <div class="copylight">
