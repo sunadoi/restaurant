@@ -1,0 +1,20 @@
+<div class="contents-wrapper">
+  <div class="contents">
+    <div class="tabs">
+      <button class="tab-button">Food</button>
+      <button class="tab-button">Drink</button>
+      <button class="tab-button">Course</button>
+    </div>
+    <ul>
+      <li class="tab-content Food show">
+        <%= render partial: "food.html.erb" %>
+      </li>
+      <li class="tab-content Drink">
+        <%= render partial: "drink.html.erb" %>
+      </li>
+      <div class="tab-content Course">
+        <%= render partial: "course.html.erb" %>
+      </div>
+    </ul>
+  </div>
+</div>

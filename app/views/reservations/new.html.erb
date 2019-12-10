@@ -1,7 +1,6 @@
 <div class="container">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">名前: <%= @user.name %></li>
-    <li class="list-group-item">メールアドレス: <%= @user.email %></li>
     <li class="list-group-item">日時: 12/24 19:00</li>
     <li class="list-group-item">コース名: <%= @menu.name %></li>
     <li class="list-group-item">人数: <%= @reservation.count %></li>
@@ -17,7 +16,9 @@
   <%= hidden_field_tag 'user_id', @reservation.user_id %>
   <%= hidden_field_tag 'menu_id', @reservation.menu_id %>
   <%= hidden_field_tag 'count', @reservation.count %>
-  <button id="btn-pay" type="button" class="btn btn-primary">カードで支払い、予約を完了する</button>
+  <div class="btn-pay">
+    <button id="btn-pay" type="button" class="btn btn-primary">カードで支払い、予約を完了する</button>
+  </div>
 
   <script>
     // #ボタンを押した際のcheckoutのフォームはStripeCheckout.configureで設定する

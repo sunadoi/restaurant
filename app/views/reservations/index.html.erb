@@ -1,23 +1,26 @@
 <div>
   <%= form_with(url: new_reservation_path, local: true, method: :get, class: "payment-form") do |form| %>
     <div class="container">
-      <div class="form-group">
-        <label for="exampleFormControlInput1">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      <h2>予約情報を入力してください</h2>
+      <div class="form-group ">
+        <label for="exampleFormControlInput1">名前</label><br>
+        <%= form.text_field :name, class: "name" %>
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect1">コース名</label><br>
-        <%= form.select :menu_id, [['梅コース', 1], ['竹コース', 2], ['松コース', 3]], { include_blank: true, selected: 1 }, { id: "menu_id", class: "menu_id" } %>
+        <%= form.select :menu_id, [['Aコース', 1], ['Bコース', 2], ['Cコース', 3]], { include_blank: true, selected: 1 }, { id: "menu_id", class: "menu_id" } %>
       </div>
-      <div class="form-group">
+      <div class="form-group count">
         <label for="exampleFormControlSelect1">人数を入力してください</label><br>
         <%= form.text_field :count, class: "count" %>
       </div>
       <div class="form-group">
-        <label for="exampleFormControlTextarea1">ご要望</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <label for="exampleFormControlTextarea1">ご要望</label><br>
+        <%= form.text_area :request, class: "request", size: "120x4" %>
       </div>
-      <%= form.submit "確認画面へ", class: "btn btn-primary" %>
+      <div class="form-btn">
+        <%= form.submit "確認画面へ", class: "btn btn-primary" %>
+      </div>
     </div>
   <% end %>
 </div>
