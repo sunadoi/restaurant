@@ -1,0 +1,20 @@
+<div class="input-group date">
+  <input type="text" id="DateTime" autocomplete="off">
+</div>
+
+<script type="text/javascript">
+<!--
+$(function () {
+  $.datetimepicker.setLocale('ja');
+  $("#DateTime").attr("readonly", true);
+  $("#DateTime").datetimepicker({
+    allowTimes:[
+      '17:30', '18:00', '18:30', '19:00', '19:30', 
+      '20:00', '20:30', '21:00', '21:30'
+    ],
+    minDate:'-1970/01/01',
+    maxDate:'+1970/01/15',
+  });
+});
+-->
+</script>
