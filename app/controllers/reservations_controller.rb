@@ -15,7 +15,9 @@ class ReservationsController < ApplicationController
     @menu = Menu.find(params[:menu_id])
     price = @menu.price
     @amount = price * @reservation.count
+  end
 
+  def complete
   end
   
 end

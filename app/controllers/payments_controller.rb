@@ -45,6 +45,8 @@ class PaymentsController < ApplicationController
       reservation.payment_id = payment.id
       reservation.save!
 
+      redirect_to complete_reservations_path
+
       rescue Stripe::CardError => e
         flash[:error] = e.message
         redirect_to new_reservation_path
