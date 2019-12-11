@@ -1,7 +1,7 @@
 ActiveAdmin.register Reservation do
   permit_params :user_name, :reservation_date, :payment_id, :menu_id, :count, :amount, :request
   
-  filter :reservation_date
+  filter :reservation_date, as: :date_time_range
   filter :menu_id
 
   index do
