@@ -28,3 +28,7 @@ ja:
         description: "決済の説明"
         payment_date: "決済日"
         amount_after_subtract_commission: "料金(手数料引かれた後)"
+      menu:
+        id: "登録番号"
+        name: "コース名"
+        price: "料金"
