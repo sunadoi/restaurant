@@ -20,10 +20,10 @@ ActiveAdmin.register Menu do
 
   show do
     attributes_table do
-      row 'NAME' do
+      row 'name' do
         resource.name
       end
-      row 'PRICE' do
+      row 'price' do
         resource.price
       end
     end
