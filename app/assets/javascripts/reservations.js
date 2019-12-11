@@ -1,6 +1,5 @@
 $(function () {
   $.datetimepicker.setLocale('ja');
-  $("#DateTime").attr("readonly", true);
   $("#DateTime").datetimepicker({
     allowTimes:[
       '17:30', '18:00', '18:30', '19:00', '19:30', 
