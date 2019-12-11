@@ -1,0 +1,34 @@
+ja:
+  activerecord:
+    models: 
+      admin_user: "管理者"
+      comment: "コメント"
+      reservation: "予約"
+      payment: "支払い"
+      menu: "メニュー"
+    attributes:
+      admin_user:
+        id: "登録番号"
+        email: "メールアドレス"
+        current_sign_in_at: "ログイン状態"
+        sign_in_count: "ログイン回数"
+        created_at: "作成日"
+      reservation:
+        id: "登録番号"
+        user_name: "名前"
+        reservation_date: "予約日時"
+        payment: "メールアドレス"
+        menu: "メニュー"
+        count: "人数"
+        amount: "料金"
+        request: "要望"
+      payment:
+        id: "登録番号"
+        email: "メールアドレス"
+        description: "決済の説明"
+        payment_date: "決済日"
+        amount_after_subtract_commission: "料金(手数料引かれた後)"
+      menu:
+        id: "登録番号"
+        name: "コース名"
+        price: "料金"
