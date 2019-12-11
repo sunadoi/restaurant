@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container new-contents-wrapper">
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><p class="property">名前:</p><p><%= @reservation.user_name %></p></li>
     <li class="list-group-item"><p class="property">日時:</p><p><%= @reservation.reservation_date.strftime("%m月%d日(#{%w(日 月 火 水 木 金 土)[@reservation.reservation_date.wday]}) %H:%M") %></p></li>
