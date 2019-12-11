@@ -36,9 +36,12 @@ class PaymentsController < ApplicationController
       #フォームから送られてきたパラメータをもとに予約情報を作成
       reservation = Reservation.new
 
-      reservation.user_id = params[:user_id]
-      reservation.count = params[:count]
+      reservation.user_name = params[:user_name]
+      reservation.reservation_date = params[:reservation_date]
       reservation.menu_id = params[:menu_id]
+      reservation.count = params[:count]
+      reservation.amount = params[:amount]
+      reservation.request = params[:request]
       reservation.payment_id = payment.id
       reservation.save!
 
