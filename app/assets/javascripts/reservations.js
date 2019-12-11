@@ -1,9 +1,3 @@
-<div class="input-group date">
-  <input type="text" id="DateTime" autocomplete="off">
-</div>
-
-<script type="text/javascript">
-<!--
 $(function () {
   $.datetimepicker.setLocale('ja');
   $("#DateTime").attr("readonly", true);
@@ -16,5 +10,3 @@ $(function () {
     maxDate:'+1970/01/15',
   });
 });
--->
-</script>

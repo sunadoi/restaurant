@@ -4,15 +4,15 @@
       <h2>予約情報を入力してください</h2>
       <div class="form-group ">
         <label for="exampleFormControlInput1">名前</label><br>
-        <%= form.text_field :name, class: "name" %>
+        <%= form.text_field :user_name, class: "user_name" %>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">日時</label><br>
+        <%= form.text_field :reservation_date, class: "reservation_date", id: "DateTime", autocomplete: "off" %>
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect1">コース名</label><br>
         <%= form.select :menu_id, [['Aコース', 1], ['Bコース', 2], ['Cコース', 3]], { include_blank: true, selected: 1 }, { id: "menu_id", class: "menu_id" } %>
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">日時</label><br>
-        <%= render partial: "datetime.html.erb" %>
       </div>
       <div class="form-group count">
         <label for="exampleFormControlSelect1">人数を入力してください</label><br>

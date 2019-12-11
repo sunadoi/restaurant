@@ -4,13 +4,13 @@ class ReservationsController < ApplicationController
   
   def new
     @reservation = Reservation.new(
-      # reservarion_date: 2019-12-24 19:00:00,
-      user_id: 1,
+      user_name: params[:user_name],
+      reservation_date: params[:reservation_date],
       menu_id: params[:menu_id],
-      count: params[:count]
+      count: params[:count],
+      amount: params[:amount],
+      request: params[:request]
     )
-
-    @user = User.find(1)
 
     @menu = Menu.find(params[:menu_id])
     price = @menu.price
