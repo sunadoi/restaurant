@@ -12,7 +12,7 @@ class PaymentsController < ApplicationController
       charge = Stripe::Charge.create(
         customer:       customer.id,
         amount:         params[:amount],
-        description:    "testの決済",
+        description:    "#{params[:menu_name]}x#{params[:count]}名分の決済",
         currency:       'jpy',
         receipt_email:  params[:stripeEmail],
       )
