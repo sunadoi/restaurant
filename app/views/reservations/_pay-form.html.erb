@@ -1,0 +1,42 @@
+<%= form_tag payments_path, id:"payForm" do %>
+  <script src="https://checkout.stripe.com/checkout.js"　class="stripe-button"></script>
+  <%= hidden_field_tag 'stripeToken' %>
+  <%= hidden_field_tag 'amount', @amount %>
+  <%= hidden_field_tag 'stripeEmail' %>
+  <%= hidden_field_tag 'user_name', @reservation.user_name %>
+  <%= hidden_field_tag 'menu_id', @reservation.menu_id %>
+  <%= hidden_field_tag 'menu_name', @menu.name %>
+  <%= hidden_field_tag 'count', @reservation.count %>
+  <%= hidden_field_tag 'reservation_date', @reservation.reservation_date %>
+  <%= hidden_field_tag 'request', @reservation.request %>
+  <div class="btn-pay">
+    <button id="btn-pay" type="button" class="btn btn-primary">カードで支払い、予約を完了する</button>
+  </div>
+
+  <script>
+    // #ボタンを押した際のcheckoutのフォームはStripeCheckout.configureで設定する
+    var handler = StripeCheckout.configure({
+      //StripeのAPIキーを引っ張ってくる
+      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+      locale: 'auto', //言語の設定（autoの場合、ユーザのブラウザ規定言語が呼び出される）
+      currency: 'jpy',
+      // image: "image/directory", もしstripe checkoutのフォーム上部に画像を入れたい場合はここで指定する
+      panelLabel: "{{amount}}のお支払い", //checkoutボタンの表示文字、{{amount}}の中に金額が入る
+      allowRememberMe: false, //RememberMeを使いたい場合はここをtrueにする
+      token: function(token,arg) { //ここでstripeTokenとstripeEmailに値を入れてsubmitする
+          document.getElementById('stripeToken').value = token.id;
+          document.getElementById('stripeEmail').value = token.email;
+          document.getElementById('payForm').submit();
+      }
+    });
+    //Stripe Checkoutのフォームに表示される情報をここで指定する
+    document.getElementById('btn-pay').addEventListener('click', function(e){
+      handler.open({
+          name: '<%= @menu.name %>',
+          description: '<%= @amount %>円',
+          amount: document.getElementById("amount").value
+      });
+      e.preventDefault();
+    })
+  </script>
+<% end %>
