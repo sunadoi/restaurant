@@ -1,5 +1,5 @@
 class Reservation < ApplicationRecord
-  belongs_to :payment
+  belongs_to :payment, optional: true
   belongs_to :menu
 
   validates :user_name, :reservation_date, :count, presence: true
