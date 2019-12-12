@@ -34,18 +34,18 @@ class PaymentsController < ApplicationController
       payment.save!
 
       #フォームから送られてきたパラメータをもとに予約情報を作成
-      reservation = Reservation.new
+      @reservation = Reservation.new
 
-      reservation.user_name = params[:user_name]
-      reservation.reservation_date = params[:reservation_date]
-      reservation.menu_id = params[:menu_id]
-      reservation.count = params[:count]
-      reservation.amount = params[:amount]
-      reservation.request = params[:request]
-      reservation.payment_id = payment.id
-      reservation.save!
+      @reservation.user_name = params[:user_name]
+      @reservation.reservation_date = params[:reservation_date]
+      @reservation.menu_id = params[:menu_id]
+      @reservation.count = params[:count]
+      @reservation.amount = params[:amount]
+      @reservation.request = params[:request]
+      @reservation.payment_id = payment.id
+      @reservation.save!
 
-      redirect_to complete_reservations_path
+      redirect_to complete_reservation_path(id: @reservation.id)
 
       rescue Stripe::CardError => e
         flash[:error] = e.message
