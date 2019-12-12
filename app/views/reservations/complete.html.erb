@@ -2,6 +2,10 @@
   <div class="success">
     <h1>ご予約が完了しました</h1>
     <h1>当日のご来店お待ちしております</h1>
+    <h2>ご予約確認のため、下記QRコードを保存しておいてください</h2>
+    <div class="qrcode">
+      <%= image_tag qrcode_tag @text %>
+    </div>
     <a class="btn btn-primary" href="/" role="button">TOPページへ戻る</a>
   </div>
 </div>

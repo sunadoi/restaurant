@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: "restaurants#index"
   resources :restaurants
   resources :reservations do
-    collection do
+    member do
       get 'complete'
     end
   end

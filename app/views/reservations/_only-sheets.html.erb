@@ -1,0 +1,11 @@
+<%= form_tag reservations_path, id:"payForm" do %>
+  <%= hidden_field_tag 'amount', @amount %>
+  <%= hidden_field_tag 'user_name', @reservation.user_name %>
+  <%= hidden_field_tag 'menu_id', @reservation.menu_id %>
+  <%= hidden_field_tag 'count', @reservation.count %>
+  <%= hidden_field_tag 'reservation_date', @reservation.reservation_date %>
+  <%= hidden_field_tag 'request', @reservation.request %>
+  <div class="btn-pay">
+    <button type="submit" class="btn btn-primary">予約を完了する</button>
+  </div>
+<% end %>

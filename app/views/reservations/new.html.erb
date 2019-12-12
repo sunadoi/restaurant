@@ -1,55 +1,23 @@
 <div class="container new-contents-wrapper">
-  <h2>予約情報を確認後、カードによるお支払いをしてください</h2>
+  <% if @reservation.menu_id == 1 %>
+    <h2>予約情報を確認後、予約を完了してください</h2>
+  <% else %>
+    <h2>予約情報を確認後、カードによるお支払いをしてください</h2>
+    <h2>お支払い後、予約完了いたします</h2>
+  <% end %>
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><p class="property">名前:</p><p><%= @reservation.user_name %></p></li>
     <li class="list-group-item"><p class="property">日時:</p><p><%= @reservation.reservation_date.strftime("%m月%d日(#{%w(日 月 火 水 木 金 土)[@reservation.reservation_date.wday]}) %H:%M") %></p></li>
     <li class="list-group-item"><p class="property">コース名:</p><p><%= @menu.name %></p></li>
-    <li class="list-group-item"><p class="property">人数:</p><p><%= @reservation.count %></p></li>
-    <li class="list-group-item"><p class="property">金額:</p><p><%= @amount %></p></li>
+    <li class="list-group-item"><p class="property">人数:</p><p><%= @reservation.count %>名</p></li>
+    <li class="list-group-item"><p class="property">金額:</p><p><%= @amount %>円</p></li>
     <li class="list-group-item"><p class="property">ご要望:</p><p id="request"><%= @reservation.request %></p></li>
     <li class="list-group-item"></li>
   </ul>
 </div>
 
-<%= form_tag payments_path, id:"payForm" do %>
-  <script src="https://checkout.stripe.com/checkout.js"　class="stripe-button"></script>
-  <%= hidden_field_tag 'stripeToken' %>
-  <%= hidden_field_tag 'amount', @amount %>
-  <%= hidden_field_tag 'stripeEmail' %>
-  <%= hidden_field_tag 'user_name', @reservation.user_name %>
-  <%= hidden_field_tag 'menu_id', @reservation.menu_id %>
-  <%= hidden_field_tag 'menu_name', @menu.name %>
-  <%= hidden_field_tag 'count', @reservation.count %>
-  <%= hidden_field_tag 'reservation_date', @reservation.reservation_date %>
-  <%= hidden_field_tag 'request', @reservation.request %>
-  <div class="btn-pay">
-    <button id="btn-pay" type="button" class="btn btn-primary">カードで支払い、予約を完了する</button>
-  </div>
-
-  <script>
-    // #ボタンを押した際のcheckoutのフォームはStripeCheckout.configureで設定する
-    var handler = StripeCheckout.configure({
-      //StripeのAPIキーを引っ張ってくる
-      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
-      locale: 'auto', //言語の設定（autoの場合、ユーザのブラウザ規定言語が呼び出される）
-      currency: 'jpy',
-      // image: "image/directory", もしstripe checkoutのフォーム上部に画像を入れたい場合はここで指定する
-      panelLabel: "{{amount}}のお支払い", //checkoutボタンの表示文字、{{amount}}の中に金額が入る
-      allowRememberMe: false, //RememberMeを使いたい場合はここをtrueにする
-      token: function(token,arg) { //ここでstripeTokenとstripeEmailに値を入れてsubmitする
-          document.getElementById('stripeToken').value = token.id;
-          document.getElementById('stripeEmail').value = token.email;
-          document.getElementById('payForm').submit();
-      }
-    });
-    //Stripe Checkoutのフォームに表示される情報をここで指定する
-    document.getElementById('btn-pay').addEventListener('click', function(e){
-      handler.open({
-          name: '<%= @menu.name %>',
-          description: '<%= @amount %>円',
-          amount: document.getElementById("amount").value
-      });
-      e.preventDefault();
-    })
-  </script>
+<% if @reservation.menu_id == 1 %>
+  <%= render "only-sheets.html.erb" %>
+<% else %>
+  <%= render "pay-form.html.erb" %>
 <% end %>
