@@ -72,3 +72,5 @@ gem 'dotenv-rails'
 
 gem 'rails-i18n'
 gem 'active_admin_datetimepicker'
+
+gem 'rqrcode'
