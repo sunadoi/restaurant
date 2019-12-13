@@ -4,23 +4,27 @@
       <h2>予約情報を入力してください</h2>
       <div class="form-group ">
         <label for="exampleFormControlInput1">名前</label><br>
-        <%= form.text_field :user_name, class: "user_name", required: true %>
+        <%= form.text_field :user_name, class: "user_name", value: @reservation.try(:user_name), required: true %>
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect1">日時</label><br>
-        <%= form.text_field :reservation_date, type: "datetime", class: "reservation_date", id: "DateTime", autocomplete: "off", required: true %>
+        <%= form.text_field :reservation_date, type: "datetime", class: "reservation_date", id: "DateTime", value: @reservation.try(:reservation_date).try(:strftime, "%Y/%m/%d %H:%M"), autocomplete: "off", required: true %>
+        <div class="over-people">
+        </div>
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect1">コース名</label><br>
-        <%= form.select :menu_id, [['席のみ', 1], ['Aコース', 2], ['Bコース', 3], ['Cコース', 4]], { include_blank: true, selected: 1 }, { id: "menu_id", class: "menu_id" } %>
+        <%= form.select :menu_id, [['席のみ', 1], ['Aコース', 2], ['Bコース', 3], ['Cコース', 4]], { include_blank: true, selected: @reservation.try(:menu_id) }, { id: "menu_id", class: "menu_id" } %>
       </div>
       <div class="form-group count">
         <label for="exampleFormControlSelect1">人数を入力してください</label><br>
-        <%= form.text_field :count, class: "count", type: "number", min: "1", max: "16", required: true %>
+        <%= form.text_field :count, class: "count", id: "people_number", autocomplete: "off", type: "number", min: "1", max: "16", required: true %>
+        <div class="over-people">
+        </div>
       </div>
       <div class="form-group">
         <label for="exampleFormControlTextarea1">ご要望</label><br>
-        <%= form.text_area :request, class: "request", size: "120x4" %>
+        <%= form.text_area :request, class: "request", size: "120x4", value: @reservation.try(:request) %>
       </div>
       <div class="form-btn">
         <%= form.submit "確認画面へ", class: "btn btn-primary" %>
