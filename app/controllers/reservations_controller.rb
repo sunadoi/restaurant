@@ -12,6 +12,20 @@ class ReservationsController < ApplicationController
       request: params[:request]
     )
 
+    before_date = @reservation.reservation_date - 1.hours - 30.minutes
+    after_date = @reservation.reservation_date + 1.hours + 30.minutes
+    reservations = Reservation.where(["reservation_date >= :before_date and reservation_date <= :after_date", {before_date: before_date, after_date: after_date}])
+
+    counts = 0
+    reservations.each do |reservation|
+      counts += reservation.count 
+    end
+
+    if (@reservation.count + counts) > 16
+      flash.now[:alert] = '予約状況によりご希望の時間帯、人数での予約ができません'
+      render :index
+    end
+
     @menu = Menu.find(params[:menu_id])
     price = @menu.price
     @amount = price * @reservation.count
@@ -26,10 +40,24 @@ class ReservationsController < ApplicationController
       amount: params[:amount],
       request: params[:request]
       )
-      @reservation.save
+    @reservation.save
 
-      redirect_to complete_reservation_path(id: @reservation.id)
+    redirect_to complete_reservation_path(id: @reservation.id)
 
+  end
+
+  def search
+    return nil if params[:count] == ""
+    date = params[:date].to_datetime
+    # dataは9時間進んだ情報が格納されている(UTC)ので目的とする時間-1.5時間と目的とする時間+1.5時間を設定
+    before_date = date - 10.hours - 30.minutes
+    after_date = date - 7.hours - 30.minutes
+
+    @reservations = Reservation.where(["reservation_date >= :before_date and reservation_date <= :after_date", {before_date: before_date, after_date: after_date}])
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def complete
