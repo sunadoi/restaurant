@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     member do
       get 'complete'
     end
+    collection do
+      get 'search'
+    end
   end
   resources :payments
 end
