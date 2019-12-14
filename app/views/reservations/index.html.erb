@@ -4,17 +4,19 @@
       <h2>予約情報を入力してください</h2>
       <div class="form-group ">
         <label for="exampleFormControlInput1">名前</label><br>
-        <%= form.text_field :user_name, class: "user_name", value: @reservation.try(:user_name), required: true %>
+        <%= form.text_field :user_name, class: "user_name", value: @reservation.try(:user_name), autocomplete: "off", required: true %>
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect1">日時</label><br>
-        <%= form.text_field :reservation_date, type: "datetime", class: "reservation_date", id: "DateTime", value: @reservation.try(:reservation_date).try(:strftime, "%Y/%m/%d %H:%M"), autocomplete: "off", required: true %>
+        <%= form.text_field :reservation_date, type: "datetime", class: "reservation_date", id: "DateTime",
+            value: @reservation.try(:reservation_date).try(:strftime, "%Y/%m/%d %H:%M"), autocomplete: "off", required: true %>
         <div class="over-people">
         </div>
       </div>
       <div class="form-group">
         <label for="exampleFormControlSelect1">コース名</label><br>
-        <%= form.select :menu_id, [['席のみ', 1], ['Aコース', 2], ['Bコース', 3], ['Cコース', 4]], { include_blank: true, selected: @reservation.try(:menu_id) }, { id: "menu_id", class: "menu_id" } %>
+        <%= form.select :menu_id, [['席のみ', 1], ['Aコース', 2], ['Bコース', 3], ['Cコース', 4]], { include_blank: false, selected: @reservation.try(:menu_id) }, 
+            { id: "menu_id", class: "menu_id" } %>
       </div>
       <div class="form-group count">
         <label for="exampleFormControlSelect1">人数を入力してください</label><br>
