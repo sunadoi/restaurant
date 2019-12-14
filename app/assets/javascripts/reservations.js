@@ -15,28 +15,30 @@ $(function () {
   function searchReservation(){
     let input = $("#people_number").val();
     let date = $("#DateTime").val();
-    $.ajax({
-      type: "GET",
-      url: "/reservations/search",
-      dataType: "json",
-      data: { count: input, date: date }
-    })
-    .done(function(reservations){
-      $(".over-people").empty();
-      if (reservations.length !== 0) {
-        let counts = 0;
-        reservations.forEach(function(reservation) {
-          counts += reservation.count;
-        });
-        if (parseInt(counts)+parseInt(input) > 16) {
-          let html = `<p>予約状況によりご希望の時間帯、人数での予約ができません</p>`
-          $(".over-people").append(html);
+    if (input && date) {
+      $.ajax({
+        type: "GET",
+        url: "/reservations/search",
+        dataType: "json",
+        data: { count: input, date: date }
+      })
+      .done(function(reservations){
+        $(".over-people").empty();
+        if (reservations.length !== 0) {
+          let counts = 0;
+          reservations.forEach(function(reservation) {
+            counts += reservation.count;
+          });
+          if (counts+parseInt(input) > 16) {
+            let html = `<p>予約状況によりご希望の時間帯、人数での予約ができません</p>`
+            $(".over-people").append(html);
+          }
         }
-      }
-    })
-    .fail(function(){
-      alert("通信に失敗しました");
-    })
+      })
+      .fail(function(){
+        alert("通信に失敗しました");
+      })
+    };
   };
 
   $("#people_number").on("keyup", function(){
