@@ -32,8 +32,8 @@
     //Stripe Checkoutのフォームに表示される情報をここで指定する
     document.getElementById('btn-pay').addEventListener('click', function(e){
       handler.open({
-          name: '<%= @menu.name %>',
-          description: '<%= @amount %>円',
+          name: 'カード情報をご入力ください',
+          description: '<%= @menu.name %>×<%= @reservation.count %>名様',
           amount: document.getElementById("amount").value
       });
       e.preventDefault();
