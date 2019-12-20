@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
   root to: "restaurants#index"
-  resources :restaurants
-  resources :reservations do
+  resources :restaurants, only: [:index, :show]
+  resources :reservations, only: [:index, :new, :create] do
     member do
       get 'complete'
     end
@@ -12,5 +12,5 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :payments
+  resources :payments, only: [:create]
 end
