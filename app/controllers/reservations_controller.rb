@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   def index
+    @reservation = Reservation.new(reservation_params)
   end
   
   def new
