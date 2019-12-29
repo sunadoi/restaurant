@@ -17,6 +17,12 @@
 </div>
 
 <div class="buttons">
+  <% if @reservation.menu_id == 1 %>
+    <%= render "only-sheets.html.erb" %>
+  <% else %>
+    <%= render "pay-form.html.erb" %>
+  <% end %>
+
   <%= form_tag reservations_path, method: :get, id:"payForm" do %>
     <%= hidden_field_tag 'user_name', @reservation.user_name %>
     <%= hidden_field_tag 'menu_id', @reservation.menu_id %>
@@ -26,11 +32,5 @@
     <div class="btn-pay">
       <button type="submit" class="btn btn-secondary">入力画面に戻る</button>
     </div>
-  <% end %>
-
-  <% if @reservation.menu_id == 1 %>
-    <%= render "only-sheets.html.erb" %>
-  <% else %>
-    <%= render "pay-form.html.erb" %>
   <% end %>
 </div>
