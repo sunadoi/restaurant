@@ -16,9 +16,9 @@
 ### **http://52.199.221.224:3000/**  
 ### Page for administrator
 
-email: admin@example.com
+　email: admin@example.com
 
-password: password
+　password: password
 
 ### **http://52.199.221.224:3000/admin**
 
