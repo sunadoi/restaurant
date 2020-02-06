@@ -26,5 +26,10 @@ Menu.create!(
   price: '6000',
 )
 
+Admin_user.create!(
+  email: "admin@example.com"
+  password: "password"
+)
+
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
