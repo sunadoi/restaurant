@@ -1,16 +1,16 @@
 #開発環境とテスト環境にはstripeのテストモードのAPIキーを使用する
 if Rails.env.development? || Rails.env.test?
   Rails.configuration.stripe = {
-    :publishable_key => ENV['STRIPE_PUBLISHABLE_KEY'],
-    :secret_key      => ENV['STRIPE_SECRET_KEY']
+    :publishable_key => Rails.application.credentials.stripe[:publish_key],
+    :secret_key      => Rails.application.credentials.stripe[:private_key]
   }
 end
 
 #本番環境にはstripeの本番環境用APIキーを使用する
 if Rails.env.production?
   Rails.configuration.stripe = {
-    :publishable_key => ENV['STRIPE_PUBLISHABLE_KEY_PRODUCTON'],
-    :secret_key      => ENV['STRIPE_SECRET_KEY_PRODUCTION']
+    :publishable_key => Rails.application.credentials.stripe[:publish_key],
+    :secret_key      => Rails.application.credentials.stripe[:private_key]
   }
 end
 
