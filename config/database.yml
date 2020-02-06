@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: restaurant_production
-  username: restaurant
-  password: <%= ENV['RESTAURANT_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= Rails.application.credentials.db[:DATABASE_PASSWORD] %>
+  socket: /var/lib/mysql/mysql.sock
