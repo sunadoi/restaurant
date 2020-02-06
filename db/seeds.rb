@@ -26,7 +26,7 @@ Menu.create!(
   price: '6000',
 )
 
-Admin_user.create!(
+AdminUser.create!(
   email: "admin@example.com",
   password: "password"
 )
