@@ -27,7 +27,7 @@ Menu.create!(
 )
 
 Admin_user.create!(
-  email: "admin@example.com"
+  email: "admin@example.com",
   password: "password"
 )
 
