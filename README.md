@@ -8,33 +8,25 @@
 </p>
 
 
-## :cloud: Infrastructure Configuration Diagram
-インフラ図
-
 ## :globe_with_meridians: App URL
 
 ### **http://52.199.221.224:3000/**  
 ### Page for administrator
-
+### **http://52.199.221.224:3000/admin**
 　email: admin@example.com
 
 　password: password
 
-### **http://52.199.221.224:3000/admin**
-
 ## :speech_balloon: Usage
 
-`$ git clone https://github.com/sunadoi/restaurant.git`
-
-`$ cd restaurant`  
-
-`$ bundle install`
-
-`$ rails db:create`
-
-`$ rails db:migrate`
-
-`$ rails s`
+```
+$ git clone https://github.com/sunadoi/restaurant.git
+$ cd restaurant
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+$ rails s
+```
 
 
 ## :eyes: E-R Diagram
