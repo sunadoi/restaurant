@@ -17,7 +17,7 @@
 
 　password: password
 
-## :speech_balloon: Usage
+## :speech_balloon: Installation
 
 ```
 $ git clone https://github.com/sunadoi/restaurant.git
@@ -27,6 +27,10 @@ $ rails db:create
 $ rails db:migrate
 $ rails s
 ```
+
+## :star: Features
+
+- Google Maps API
 
 
 ## :eyes: E-R Diagram
