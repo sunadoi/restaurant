@@ -70,6 +70,7 @@ $ bundle install
 $ rails db:create
 $ rails db:migrate
 $ rails s
+👉http://localhost:3000/
 ```
 
 </br>
