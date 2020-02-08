@@ -8,6 +8,7 @@ Restaurant web site
 </p>
 
 </br>
+
 ***
 <p align="center">
 <a href="https://guides.rubyonrails.org/"><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/7a6c27cd-09cb-b9e7-7b1b-1cb56dfbee0c.png" height="60px;" /></a>
