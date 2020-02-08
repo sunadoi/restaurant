@@ -31,6 +31,7 @@ $ rails s
 ## :star: Features
 
 <img width="200" alt="スクリーンショット 2020-01-30 20.41.59.png" src="https://user-images.githubusercontent.com/57832553/74078773-da277400-4a71-11ea-9f6c-ff08f741c9ad.png">
+<img width="600" alt="スクリーンショット 2020-01-30 20.41.59.png" src="https://user-images.githubusercontent.com/57832553/74079984-1fec3880-4a82-11ea-9e9e-f947ed7d8446.gif">
 <img width="600" alt="スクリーンショット 2020-01-30 20.41.59.png" src="https://user-images.githubusercontent.com/57832553/74079923-334ad400-4a81-11ea-9287-378bbe2a6d9b.gif">
 - Google Maps API
 
