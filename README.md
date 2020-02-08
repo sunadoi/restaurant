@@ -1,6 +1,6 @@
 # Bouno
 
-Restaurant web site
+Restaurant website created to reduce food loss due to unauthorized cancellation.
 
 <p>
 <img width="600" alt="スクリーンショット 2020-01-30 20.41.59.png" src="https://user-images.githubusercontent.com/57832553/74080253-7c048c00-4a85-11ea-8aae-807e256d70a2.gif">
@@ -11,9 +11,10 @@ Restaurant web site
 
 ## :memo:　Description
 Bouno is restaurant web site.
-- User must prepay by credit card with course reservation.
-- Administrator can confirm visitor's reservation status via QR code.
-- Administrator can manage reservation status through administrator page.
+- Users must pay in advance by credit card when booking the cource.
+- Users can reserve seats only.
+- Administrators can check the reservation status of visitors by QR code.
+- Administrators can manage booking status from the admin page.
 
 
 ***
