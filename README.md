@@ -47,6 +47,12 @@ Bouno is restaurant web site.
 ## :globe_with_meridians: App URL
 
 ### **http://52.199.221.224:3000/**  
+:white_check_mark:
+credit card</br>
+number: 4242424242424242</br>
+exipiration: any number</br>
+CVC: any number with 3 characters
+
 ### Page for administrator
 ### **http://52.199.221.224:3000/admin**
 　email: admin@example.com
