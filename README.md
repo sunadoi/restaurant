@@ -7,7 +7,7 @@ Restaurant website created to reduce food loss due to unauthorized cancellation.
 <img width="200" align="right" alt="スクリーンショット 2020-01-30 20.41.59.png" src="https://user-images.githubusercontent.com/57832553/74078773-da277400-4a71-11ea-9f6c-ff08f741c9ad.png">
 </p>
 
-</br>
+</br></br>
 
 ## :memo:　Description
 Bouno is restaurant web site.
@@ -23,6 +23,16 @@ Bouno is restaurant web site.
 <a href="https://jquery.com/"><img src="https://user-images.githubusercontent.com/57832553/73933784-96712500-4920-11ea-974f-23b73e2c6113.png" height="60px;" /></a>
 <a href="https://aws.amazon.com/jp/aws-jp-introduction/aws-jp-webinar-service-cut/"><img src="https://user-images.githubusercontent.com/57832553/73935917-fec20580-4924-11ea-9b42-36715e8d4ede.png" height="60px;" /></a>
 </p>
+
+</br>
+
+
+## :star: Features
+
+<h3 align="center">~Validation with incremental search~</h3>
+<img align="center" width="600" alt="スクリーンショット 2020-01-30 20.41.59.png" src="https://user-images.githubusercontent.com/57832553/74079923-334ad400-4a81-11ea-9287-378bbe2a6d9b.gif">
+<img width="600" alt="スクリーンショット 2020-01-30 20.41.59.png" src="https://user-images.githubusercontent.com/57832553/74080102-ab19fe00-4a83-11ea-8d61-a458ddd74075.png">
+- Google Maps API
 
 </br>
 
@@ -50,14 +60,6 @@ $ rails s
 
 </br>
 
-## :star: Features
-
-
-<img width="600" alt="スクリーンショット 2020-01-30 20.41.59.png" src="https://user-images.githubusercontent.com/57832553/74079923-334ad400-4a81-11ea-9287-378bbe2a6d9b.gif">
-<img width="600" alt="スクリーンショット 2020-01-30 20.41.59.png" src="https://user-images.githubusercontent.com/57832553/74080102-ab19fe00-4a83-11ea-8d61-a458ddd74075.png">
-- Google Maps API
-
-</br>
 
 ## :eyes: E-R Diagram
 
