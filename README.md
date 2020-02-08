@@ -30,9 +30,17 @@ Bouno is restaurant web site.
 ## :star: Features
 
 <h3 align="center">~Validation with incremental search~</h3>
-<img align="center" width="600" alt="スクリーンショット 2020-01-30 20.41.59.png" src="https://user-images.githubusercontent.com/57832553/74079923-334ad400-4a81-11ea-9287-378bbe2a6d9b.gif">
+<p align="center">
+<img width="600" alt="スクリーンショット 2020-01-30 20.41.59.png" src="https://user-images.githubusercontent.com/57832553/74079923-334ad400-4a81-11ea-9287-378bbe2a6d9b.gif">
+</p>
+
+<h3 align="center">~Admin page~</h3>
+<p align="center">
 <img width="600" alt="スクリーンショット 2020-01-30 20.41.59.png" src="https://user-images.githubusercontent.com/57832553/74080102-ab19fe00-4a83-11ea-8d61-a458ddd74075.png">
+</p>
+
 - Google Maps API
+- QR code to check the reservation status of visitors
 
 </br>
 
