@@ -1,10 +1,14 @@
+# Bouno
+
+Restaurant web site
+
 <p>
 <img width="600" alt="スクリーンショット 2020-01-30 20.41.59.png" src="https://user-images.githubusercontent.com/57832553/74080253-7c048c00-4a85-11ea-8aae-807e256d70a2.gif">
 <img width="200" align="right" alt="スクリーンショット 2020-01-30 20.41.59.png" src="https://user-images.githubusercontent.com/57832553/74078773-da277400-4a71-11ea-9f6c-ff08f741c9ad.png">
 </p>
 
 </br>
-<h2 align="center">Buono</h2>
+***
 <p align="center">
 <a href="https://guides.rubyonrails.org/"><img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/543133/7a6c27cd-09cb-b9e7-7b1b-1cb56dfbee0c.png" height="60px;" /></a>
 <a href="https://jquery.com/"><img src="https://user-images.githubusercontent.com/57832553/73933784-96712500-4920-11ea-974f-23b73e2c6113.png" height="60px;" /></a>
