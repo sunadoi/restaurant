@@ -44,20 +44,6 @@ Bouno is restaurant web site.
 
 </br>
 
-## :speech_balloon: Installation
-
-```
-$ git clone https://github.com/sunadoi/restaurant.git
-$ cd restaurant
-$ bundle install
-$ rails db:create
-$ rails db:migrate
-$ rails s
-👉http://localhost:3000/
-```
-
-</br>
-
 
 ## :eyes: E-R Diagram
 
